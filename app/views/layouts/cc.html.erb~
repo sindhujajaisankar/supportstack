@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/stylesheets/style.css" type="text/css" rel="stylesheet"> 
+<title>Stack</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+       
+       <div id="alluser_nav" align="right">
+ <% if alluser_signed_in? %>
+     Signed in as <%= current_alluser.email %>
+        <%= link_to "Sign out",destroy_alluser_session_path,:method => :delete%>
+<%else%>
+<%end%>
+</div>
+
+
+<% if alluser_signed_in? %>
+
+<div id="bg">
+  <div id="outer">
+       <div id="header">
+						<div id="logo">
+							<h1>
+									<a href="#">ABC Company</a>
+							</h1>
+						</div>
+<div id="search">
+		<form action="" method="post">
+		<input class="text" name="search" size="32" maxlength="64" /><input class="button" type="submit" value="Search" />
+			</form>
+</div>
+<div id="nav">
+	<ul>
+	<li class="first active">
+	<a href="/clientdashboard/mytickets">Home</a>
+	</li>
+	<li>
+	<a href="#">News</a>
+	</li>
+	<li>
+	<a href="/clientdashboard/new">Create Ticket</a>
+	</li>
+	<li>
+	<a href="/clientdashboard/mytickets">Ticket History</a>
+	</li>
+	<li class="last">
+	<a href="#">Contact Us</a>
+	</li>
+	</ul>
+	<br class="clear" />
+
+</div>
+  </div> 
+   
+
+<%else%>
+
+<%end%>
+	<div id="banner">
+<img src="/images/pic1.jpg" width="932" height="150" alt="150" />
+</div>			
+
+
+  <%=yield%>
+</div>
+<div id="copyright">
+&copy; Your Site Name |
+</div>
+ </div>
+
+</body>
+</html>

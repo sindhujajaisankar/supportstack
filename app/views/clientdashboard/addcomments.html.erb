@@ -1,0 +1,25 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/clientdashboard/clipartial" %>
+ </div>
+
+
+<div id="content">
+<div id="box1">
+     
+		 
+		 <%=form_for @comment,:remote=>true,:url=>{:action=>"post",:id=>"#{@ticket.id}"} do |c|%>
+
+Comment:<br>  
+<%=c.text_area :comment %><br>
+<%=c.submit "save"%>
+<%end%>
+</div>
+
+
+<div id="comments"> 
+<%=render :partial=>'/clientdashboard/comment' %> 
+
+</div>
+</div>
+</div>

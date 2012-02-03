@@ -1,0 +1,8 @@
+class AdmindashboardController < ApplicationController
+layout "aa"
+def new	
+end
+def index
+redirect_to '/home/homedash'	
+end
+end

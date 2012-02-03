@@ -1,0 +1,41 @@
+<div id="main">
+<div id="sidebar">
+<%=render :partial => "/clientdashboard/clipartial" 	%>	
+</div>
+</div>
+
+<div id="content">
+<div id="box1">
+
+<table border=1>
+<tr>
+    <th>#</th>
+		<th>Ticket id</th>
+		<th>Date</th>
+		<th>Subject</th>
+		<th>Priority</th>
+		<th>Status</th>
+		<th>Department name	</th>
+		<th>Action</th>
+		</tr>
+		<%@a=1%>
+		<% @ticket.each do |t|%>
+		<tr>
+		 <td><%=@a%></td>
+		 <td><%=t.id%></td>
+		 <td><%=t.created_at%></td>
+			<td><%=t.subject%></td>
+			<td><%=t.priority%></td>
+			<td><%=t.status%></td>
+	    <% @dep.each do |d|%>
+			<% if t.department_id==d.id%>
+				  <td><%=d.name%></td>
+				<%end%>
+        <%end%>	
+<td><%=link_to "Edit","/clientdashboard/changestatus/#{t.id}",:method=>'changestatus' %></td>				
+					</tr>
+<%@a=@a+1%>
+<%end%>
+	</table>			
+		</div>
+		</div>

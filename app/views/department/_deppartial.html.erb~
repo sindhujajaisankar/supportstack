@@ -1,0 +1,16 @@
+<h3>							
+     Template
+   </h3>
+   <ul class="linkedList">
+     <li class="first">
+	<a href="#">Dashboard</a>
+     </li>
+     <li>
+	<a href="#">Insert Department</a>
+     </li>
+     
+     <li class="last">
+        <a href="#">Manage Department</a>
+     </li>
+   </ul>
+

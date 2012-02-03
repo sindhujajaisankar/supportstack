@@ -1,0 +1,15 @@
+
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/ticket/partialnew" %>
+ </div>
+
+ 
+ <div id="content">
+<div id="box1">
+<%=image_tag @tick.avatar.url%>
+<%= image_tag @tick.avatar.url(:medium) %>
+<%=image_tag @tick.avatar.url(:thumb) %>
+	</div>
+	</div>
+   </div>

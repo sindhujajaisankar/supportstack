@@ -1,0 +1,43 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/staff/staffpartial" %>
+ </div>
+
+
+<div id="content">
+<div id="box1">
+ <table border=1>
+  <tr>
+      <th>#</th>
+      <th>Id</th>
+      <th>Fullname</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>action1</th>
+      <th>action2</th>
+   </tr>
+<%@a=1%>
+<% @staff.each do |f|%>
+<tr>
+<td><%=@a%></td>
+<td><%=f.id%></td>     
+<% @user.each do |u|%>
+<% if f.alluser_id==u.id %>
+<td><%=u.fullname%></td>
+<td><%=u.email%></td>
+<%end%>
+<%end%>
+<% @dep.each do |d|%>
+<% if f.department_id==d.id %>
+<td><%=d.name%></td>
+<%end%>
+<%end%>
+<td><%=link_to "Delete","/staff/destroy/#{f.id}",:method=>'delete' %></td>
+<td><%=link_to "Edit","/staff/edit/#{f.id}",:method=>'update' %></td>
+<%@a=@a+1%> 
+</tr>
+<%end%>
+</table>
+</div>
+</div>
+</div>

@@ -1,0 +1,18 @@
+
+
+
+
+<h3> Enter fields </h3>
+
+<%=form_for @dep,:url=>{:action=>'create'} do |d|%>
+Name <%=d.text_field :name%></br>
+Description <%=d.text_field :description%></br>
+Email_id <%=d.text_field :email_id%></br>
+Phone <%=d.text_field :phone_number%></br>
+Fax <%=d.text_field :fax%></br>
+<%=d.submit"save"%>
+<%end%>
+</div>
+
+<%=render :partial => "/department/deppartial" %>
+

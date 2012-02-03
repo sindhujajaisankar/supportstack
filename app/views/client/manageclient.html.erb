@@ -1,0 +1,39 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/client/clientpartial" %>
+ </div>
+
+
+<div id="content">
+<div id="box1">
+ <table border=1>
+  <tr>
+      <th>#</th>
+      <th>Id</th>
+      <th>Fullname</th>
+      <th>Email</th>
+      <th>Companyname</th>
+      <th>action1</th>
+      <th>acton2</th>
+   </tr>
+<%@a=1%>
+<% @client.each do |f|%>
+<tr>
+<td><%=@a%></td>
+<td><%=f.id%></td>     
+<% @user.each do |u|%>
+<% if f.alluser_id==u.id %>
+<td><%=u.fullname%></td>
+<td><%=u.email%></td>
+<%end%>
+<%end%>
+<td><%=f.companyname%></td>
+<td><%=link_to "Delete","/client/destroy/#{f.id}",:method=>'delete' %></td>
+<td><%=link_to "Edit","/client/edit/#{f.id}",:method=>'update' %></td>
+<%@a=@a+1%>
+</tr>
+<%end%>
+</table>
+</div>
+</div>
+</div>

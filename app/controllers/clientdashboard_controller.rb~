@@ -1,0 +1,13 @@
+class ClientdashboardController < ApplicationController
+layout "cc"
+def new
+@tick=Ticket.new	
+end
+def create
+@tick=Ticket.create(params[:ticket])
+@tick.submittedby=current_alluser.role_id
+@tick.update_attributes(:status => "open")
+@tick.save
+redirect_to '/clientdashboard/new'
+end
+end

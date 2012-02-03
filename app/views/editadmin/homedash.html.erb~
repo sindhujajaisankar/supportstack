@@ -1,0 +1,11 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/editadmin/homepartial" %>
+ </div>
+ </div>
+ 
+ <div id="content">
+<div id="box1">
+  <h3> admin home dashboard</h3>
+	</div>
+	</div>

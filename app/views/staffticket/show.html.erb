@@ -1,0 +1,28 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/staffticket/ticket1" %>
+ </div>
+
+ <div id="content">
+<div id="box1">
+     
+		 Ticket Id
+<%=@ticket.id%> 
+Date
+<%=@ticket.created_at%><br>
+Priority
+<%=@ticket.priority%><br>
+Ticket
+<%=@ticket.subject%><br>
+Description
+<%=@ticket.description%><br>
+Comment<br>
+<table>
+<% @comment.each do |r| %>
+<tr><%=r.title%><br></tr>
+ <tr><%=r.comment%></tr><br><br>
+ <%end%>
+</table>
+</div>
+</div>
+ </div>

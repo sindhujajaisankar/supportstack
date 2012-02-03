@@ -1,0 +1,27 @@
+
+
+
+							
+   <h3>							
+     Template
+   </h3>
+   <ul class="linkedList">
+     <li class="first">
+	<a href="/ticket/ticketdash">Dashboard</a>
+     </li>
+     <li>
+	<a href="/ticket/opentick">Open Tickets</a>
+     </li>
+     <li>
+        <a href="/ticket/pendingtick">Pending Tickets</a>
+     </li>
+     <li>
+	<a href="/ticket/completedtick">Completed Tickets</a>
+     </li>
+     
+     <li class="last">
+        <a href="/ticket/new">Submit Tickets</a>
+     </li>
+   </ul>
+
+

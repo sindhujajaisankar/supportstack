@@ -1,0 +1,19 @@
+
+
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/editadmin/homepartial" %>
+ </div>
+ </div>
+
+<%=form_for @user,:url=>{:action=>"update"} do |e| %>
+FullName
+<%=e.text_field :fullname%><br>
+Email
+<%=e.email_field :email%><br>
+Phone
+<%=e.text_field :phone%><br>
+Mobile
+<%=e.text_field :mobile%><br>
+<%=e.submit "Modify"%>
+<%end%>

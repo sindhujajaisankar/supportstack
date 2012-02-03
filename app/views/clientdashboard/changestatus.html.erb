@@ -1,0 +1,45 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/clientdashboard/clipartial" %>
+ </div>
+
+
+<div id="content">
+<div id="box1">
+     
+ <b>Here you can view the ticket details</b>   <br>
+Id:
+<%=@ticket.id%><br>
+Date:
+<%=@ticket.created_at%><br>
+Priority:
+<%=@ticket.priority%><br>
+Status:
+<%=@ticket.status%><br>				
+Ticket:
+<%=@ticket.subject%><br>
+Last Modified
+<%=@ticket.updated_at%><br>
+Department:
+<%=@dep.name%><br><br><br>
+
+
+
+
+<b>Here you can change the status and priority of the ticket</b> <br>
+<%=form_for @ticket,:remote=>true,:url=>"/clientdashboard/updstatus/#{@ticket.id}" do |f|%>
+Priority:
+<%= f.select(:priority, [["Low"],["Medium"],["High"],["Emergency"],["Critical"]], {:include_blank => 'Please select'}) %><br>
+Status:
+<%= f.select(:status, [["open"],["completed"]], {:include_blank => 'Please select'}) %><br>
+
+
+<%=f.submit "Update"%>
+<%end%>
+
+
+
+
+</div>
+</div>
+</div>

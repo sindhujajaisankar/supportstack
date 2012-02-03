@@ -1,0 +1,14 @@
+
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/ticket/partialnew" %>
+ </div>
+ </div>
+
+<div id="content">
+<div id="box1">
+<h3>dashboard</h3>
+</div>
+</div>
+
+

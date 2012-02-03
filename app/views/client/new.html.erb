@@ -1,0 +1,38 @@
+
+
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/client/clientpartial" %>
+ </div>
+
+
+
+<div id="content">
+<div id="box1">
+<h2>add client</h2>
+
+<%=form_for :client ,:url =>{:action=>'create'} do |c|%>
+
+Company <%=c.text_field :companyname%></br>
+Address1 <%=c.text_field :address_1%></br>
+Address2 <%=c.text_field :address_2%></br>
+City <%=c.text_field :city%></br>
+state <%=c.text_field :state%></br>
+country
+<%= c.select(:country,[["India",1],["US",2],["Australia",3]], {:include_blank => 'Please select'}) %><br>
+fax <%=c.text_field :fax%></br>
+
+<%=fields_for :alluser do |p|%>
+Full name<%=p.text_field :fullname%><%=@error[:fullname] if @error && @error[:fullname]%></br>
+phone <%=p.text_field :phone%></br>
+mobile <%=p.text_field :mobile%></br>
+email <%=p.email_field :email%><%=@error[:email] if @error && @error[:email]%></br>
+username <%=p.text_field :username%><%=@error[:username] if @error && @error[:username]%></br>
+
+<%end%>
+<%=c.submit"save"%>
+<%end%>
+</div>
+</div>
+ </div>
+

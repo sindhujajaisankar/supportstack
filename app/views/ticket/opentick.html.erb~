@@ -1,0 +1,44 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/ticket/partialnew" %>
+ </div>
+</div>
+<div id="content">
+<div id="box1">
+ <table border=1>
+   <tr>
+      <th>#</th>
+      <th>ID</th>
+      <th>Date</th>
+      <th>Client</th>
+      <th>Ticket</th>
+      <th>Priority</th>
+      <th>Status</th>
+      <th>Action</th>
+      <th>Action1</th>
+   </tr>
+<%@a=1%>
+<% @ticket.each do |f|%>
+<tr>
+<td><%=@a%></td>
+<td><%=f.id%></td>
+<td><%=f.created_at%></td>
+<% @user.each do |u|%>
+<% if f.submittedby==u.id %>
+<td><%=u.fullname%>
+<%end%>
+<%end%>
+<td><%=f.subject%></td>
+<td><%=f.priority%></td>
+<td><%=f.status%></td>
+<td><%=link_to "Delete","/ticket/destroy/#{f.id}",:method=>'delete' %></td>
+<td><%=link_to "Assign","/ticket/assign/#{f.id}",:method=>'assign'%></td>
+</tr>
+<%@a=@a+1%>
+<%end%>
+
+</table>
+
+</div>
+</div>
+      

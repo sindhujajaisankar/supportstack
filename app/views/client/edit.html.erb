@@ -1,0 +1,30 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/client/clientpartial" %>
+ </div>
+ 
+
+<div id="content">
+<div id="box1">
+<%=form_for @client, :url=>"/client/update/#{@client.id}"  do |e|%>
+
+<%=fields_for @user  do |p|%>
+Full name<%=p.text_field :fullname%><%=@error[:fullname] if @error && @error[:fullname]%></br>
+phone <%=p.text_field :phone%></br>
+mobile <%=p.text_field :mobile%></br>
+email <%=p.email_field :email%><%=@error[:email] if @error && @error[:email]%></br>
+<%end%>
+
+Company <%=e.text_field :companyname%></br>
+Address1 <%=e.text_field :address_1%></br>
+Address2 <%=e.text_field :address_2%></br>
+City <%=e.text_field :city%></br>
+state <%=e.text_field :state%></br>
+country
+<%= e.select(:country,[["India",1],["US",2],["Australia",3]], {:include_blank => 'Please select'}) %><br>
+fax <%=e.text_field :fax%></br>
+<%=e.submit  "modify" %>
+<%end%>
+</div>
+</div>  
+</div>

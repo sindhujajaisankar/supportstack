@@ -1,0 +1,20 @@
+<h3>							
+     Template
+   </h3>
+   <ul class="linkedList">
+     <li class="first">
+	<a href="/client/homedash">Dashboard</a>
+     </li>
+     <li>
+	<a href="#">My Account</a>
+     </li>
+		 <li>
+	<a href="/staff/createstaff">Insert Staff</a>
+     </li>
+		 <li>
+	<a href="#">Insert FAQ</a>
+     </li>
+     <li class="last">
+        <a href="/ticket/submit ticket">Submit Ticket</a>
+     </li>
+   </ul>

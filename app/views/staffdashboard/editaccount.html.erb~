@@ -1,0 +1,28 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/staffticket/stafftick"	%>
+ </div>
+ </div>
+
+<div id="content">
+<div id="box1">
+<h3>Update account</h3>
+<%=form_for :staff_admin,:url=>{:action=>"updateaccount"} do |d| %>
+
+<%=fields_for :alluser do |p|%>
+Full name<%=p.text_field :fullname%></br>
+phone <%=p.text_field :phone%></br>
+mobile <%=p.text_field :mobile%></br>
+email <%=p.email_field :email%></br>
+username <%=p.text_field :username,:disabled=>true%></br>
+<%end%>
+
+	
+<p>Ticket notifier<br>
+<%=d.check_box "ticket_notifier"%>receice mail alert<br>
+Priveleges<br>
+<%=d.check_box "priveleges"%>admin privelege<br><p>
+<%=d.submit "update"%>
+<%end%>
+</div>
+</div>

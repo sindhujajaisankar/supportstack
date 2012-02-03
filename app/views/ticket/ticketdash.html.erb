@@ -1,0 +1,35 @@
+
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/ticket/partialnew" %>
+ </div>
+ 
+
+<div id="content">
+<div id="box1">
+<h3>Ticket History</h3>
+
+<table border=1>
+<tr>
+<th>#</th>
+<th>Status</th>
+<th>No of Tickets</th>
+</tr>
+<tr>
+<td>1</td>
+<td>
+Open Tickets</td>
+<td><%= @open%></td></tr>
+<tr>
+<td>2</td>
+<td>Pending Tickets</td>
+<td><%= @pending%><br></td></tr>
+<tr>
+<td>3</td>
+<td>Completed Tickets</td>
+<td><%= @completed%><br></td></tr>
+	</table>
+</div>
+</div>
+</div>
+

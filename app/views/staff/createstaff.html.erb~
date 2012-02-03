@@ -1,0 +1,38 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/staff/staffpartial" %>
+ </div>
+ </div>
+
+<div id="content">
+<div id="box1">
+<h3>Add Staff</h3>
+<%=form_for :staff_admin,:url=>{:action=>"create"} do |d| %>
+
+<%=fields_for :alluser do |p|%>
+Full name<%=p.text_field :fullname%></br>
+phone <%=p.text_field :phone%></br>
+mobile <%=p.text_field :mobile%></br>
+email <%=p.email_field :email%></br>
+username <%=p.text_field :username%></br>
+
+<%end%>
+
+Department
+<%=d.select(:department_id, department_for_select, :prompt=>'Select') %><br> 
+<p>Ticket notifier<br>
+<%=d.check_box "ticket_notifier"%>receice mail alert<br>
+Priveleges<br>
+<%=d.check_box "priveleges"%>admin privelege<br><p>
+<%=d.submit "create"%>
+<%end%>
+</div>
+</div>
+
+
+
+
+
+
+
+

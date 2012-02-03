@@ -1,0 +1,12 @@
+class Removephonefromclient < ActiveRecord::Migration
+  def up
+remove_column :clients,:phone1
+remove_column :clients,:phone2
+  end
+
+  def down
+add_column :clients,:phone1,:string
+add_column :clients,:phone2,:string
+
+  end
+end

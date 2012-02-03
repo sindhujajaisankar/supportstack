@@ -1,0 +1,32 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/editadmin/homepartial" %>
+ </div>
+ <div id="content">
+<div id="box1">
+  <h3> admin home dashboard</h3>
+  <table border=1>
+  <tr>
+  <td>
+
+  <th>Total no: of staffs <br> <%=@staff%></th>
+  </td>
+  <td>
+
+   <th>Total no: of clients<br> <%=@client%></th>
+  </td>
+  </tr>
+  <tr>
+  <td>
+
+  <th>Total no: of Open tickets<br><%=@open%></th>
+  </td>
+  <td>
+
+  <th>Total no: of Pending tickets<br><%=@pending%></th>
+  </td>
+  </tr>
+  </table>
+ </div>
+	</div>
+	</div>

@@ -1,0 +1,38 @@
+class StaffticketController < ApplicationController
+layout "ss"
+
+
+
+def listticket
+if alluser_signed_in?
+if current_alluser.role_id == 3
+@s=Ticket.new
+@s=Ticket.where(:alluser_id=>current_alluser.id,:status=>"pending")
+else
+redirect_to '/allusers/sign_in'
+end
+else
+redirect_to '/allusers/sign_in'
+end	
+end	
+def changestatus
+@tick1=Ticket.new
+@tick1=Ticket.find_by_id(params[:id])
+@comment=Comment.new
+end
+def save
+	@tick1=Ticket.find_by_id(params[:id])
+	@tick1.update_attributes(:status=>"completed") 
+	@tick1.comments.create(:title=>"staff comment",:comment=>params[:comment][:comment], :user_id=>current_alluser.id)
+	redirect_to '/staffticket/listticket'	
+	end
+
+def completedtick
+@s=Ticket.new
+@s=Ticket.where(:alluser_id=>current_alluser.id,:status=>"completed")
+end
+
+
+
+end
+			

@@ -1,0 +1,25 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/staffticket/stafftick"	%>
+ </div>
+
+
+<div id="content">
+<div id="box1">
+<h3>Update account</h3>
+<%=form_for @user,:url=>{:action=>"update"} do |p| %>
+Full name<%=p.text_field :fullname%><%=@error[:fullname] if @error && @error[:fullname]%></br>
+phone <%=p.text_field :phone%></br>
+mobile <%=p.text_field :mobile%></br>
+email <%=p.email_field :email%><%=@error[:email] if @error && @error[:email]%></br>
+username <%=p.text_field :username,:disabled=>true %></br>
+
+<%=fields_for @dep,:url=>{} do |e|%> 
+department:
+<%=e.text_field :name,:disabled=>true%><br>
+<%end%>
+<%=p.submit "update"%>
+<%end%> 
+</div>
+</div>
+ </div>

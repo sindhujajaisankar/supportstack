@@ -1,0 +1,14 @@
+<h3>							
+     Template
+   </h3>
+   <ul class="linkedList">
+     <li class="first">
+	<a href="/client/staffdash">Dashboard</a>
+     </li>
+     <li>
+	<a href="/client/createstaff">Create staff</a>
+     </li>
+     <li class="last">
+        <a href="#">Manage Staff</a>
+     </li>
+   </ul>

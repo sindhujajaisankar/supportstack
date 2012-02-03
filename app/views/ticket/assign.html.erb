@@ -1,0 +1,40 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/ticket/partialnew" %>
+ </div>
+
+
+<div id="content">
+<div id="box1">
+     <div id="first">
+     
+     
+    Id:
+<%=@ticket.id%><br>
+Date: 
+<%=@ticket.created_at%><br>
+Priority:
+<%=@ticket.priority%><br>
+Status:
+<%=@ticket.status%><br>
+				
+Ticket:
+<%=@ticket.subject%><br>
+					
+Message:
+<%=@ticket.description%><br>
+
+Ticket Attach: <%=link_to "#{@ticket.attachment.avatar_file_name}","/ticket/download/#{@ticket.id}"%><br>
+</div>
+
+<div id="second">
+<%=form_for :ticket,:url=>{:action=>"save",:id=>"#{@ticket1.id}"} do |a|%>
+Assign to the Staff<br>
+<%=a.select(:alluser_id,@s.all.collect{|x| [x.alluser.fullname,x.alluser_id]},:prompt=>'select')%><br> 
+<%=a.submit "assign"%>
+<%end%>
+</div>
+
+</div>
+</div>
+</div>

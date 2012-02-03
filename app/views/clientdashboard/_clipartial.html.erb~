@@ -1,0 +1,17 @@
+<h3>							
+     Template
+   </h3>
+   <ul class="linkedList">
+     <li class="first">
+	<a href="/clientdashboard/new">Submit ticket</a>
+     </li>
+     <li>
+	<a href="/clientdashboard/mytickets">My tickets</a>
+     </li>  
+     <li>
+	<a href="/clientdashboard/edit">My account</a>
+     </li>
+     <li class="last">
+        <a href="/allusers/edit">Change password</a>
+     </li>
+   </ul>

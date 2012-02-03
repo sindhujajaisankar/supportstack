@@ -1,0 +1,7 @@
+class User < ActiveRecord::Base
+ has_one :role
+ belongs_to :client
+ belongs_to :staff_admin
+ has_many :tickets
+ has_many :attachments
+end

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/stylesheets/style.css" type="text/css" rel="stylesheet"> 
+<title>Stack</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+       <div id="alluser_nav" align="left">
+ <% if alluser_signed_in? %>
+     Signed in as <%= current_alluser.email %>
+        <%= link_to "Sign out",destroy_alluser_session_path,:method => :delete%>
+<%else%>
+<%end%>
+</div>
+
+<div id="bg">
+  <div id="outer">
+       <div id="header">
+	<div id="logo">
+<h1><a href="#">SUPPORT STACK</a></h1>
+</div>
+
+</div>
+<div id="banner">
+<img src="/images/pic1.jpg" width="932" height="172" alt="" />
+</div>
+ </div>
+
+<% unless alluser_signed_in? %>
+<div id="content">
+<div id="box1">
+<h3>Welcome to ABC Support</h3>
+<p>   Our goal is to provide you with support services that protect and enhance your investment in our technology. To meet your unique support needs, Support Stack has a variety of support options available.</p>
+<%else%>
+<%end%>
+
+</div>
+<div id="box1">
+<%=yield%>
+
+</div>
+</div>
+
+<div id="copyright">
+&copy; Your Site Name |
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

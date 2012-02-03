@@ -1,0 +1,29 @@
+
+
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/staff/staffpartial" %>
+ </div>
+ 
+
+<div id="content">
+<div id="box1">
+<%=form_for @staff1, :url=>"/staff/update/#{@staff1.id}"  do |e|%>
+
+<%=fields_for @user1  do |p|%>
+Full name<%=p.text_field :fullname%><%=@error[:fullname] if @error && @error[:fullname]%></br>
+phone <%=p.text_field :phone%></br>
+mobile <%=p.text_field :mobile%></br>
+email <%=p.email_field :email%><%=@error[:email] if @error && @error[:email]%></br>
+
+<%end%>
+
+ Ticket notifier<br>
+<%=e.check_box "ticket_notifier"%>receice mail alert<br>
+Priveleges<br>
+<%=e.check_box "priveleges"%>admin privelege<br> 
+<%=e.submit  "modify" %>
+<%end%>
+</div>
+</div>  
+</div>

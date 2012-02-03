@@ -1,0 +1,14 @@
+ <h3>							
+     Template
+   </h3>
+   <ul class="linkedList">
+     <li class="first">
+	<a href="/client/clientdash">Dashboard</a>
+     </li>
+     <li>
+	<a href="/client/new">Create Client</a>
+     </li>
+     <li class="last">
+        <a href="/client/manageclient">Manage Client</a>
+     </li>
+   </ul>

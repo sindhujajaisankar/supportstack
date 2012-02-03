@@ -1,0 +1,23 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/department/deppartial" %>
+ </div>
+ 
+ 
+<div id="content">
+<div id="box1">
+<h3> Edit department</h3>
+
+<%=form_for @dep,:url=>{:action=>'update',:id=>"#{@dep.id}"} do |d|%>
+Name <%=d.text_field :name%><%=@error[:name] if @error && @error[:name]%></br>
+Description <%=d.text_field :description%></br>
+Email_id <%=d.text_field :email_id%><%=@error[:email_id] if @error && @error[:email_id]%></br>
+Phone <%=d.text_field :phone_number%></br>
+Fax <%=d.text_field :fax%></br>
+<%=d.submit "update"%>
+<%end%>
+
+</div>
+</div>
+</div>
+

@@ -1,0 +1,19 @@
+<h1>Admin</h1>
+<h3>Enter the Ticket Details</h3>
+
+<%= form_for @tick,:url=>{ :action=>"create"} do |f| %>
+To:
+<%= f.select(:department_id, department_for_select, :prompt => 'Select') %><br>
+Category:
+<%= f.select(:category,[["Product",1],["Shipping",2],["Order & Delivery",3]], {:include_blank => 'Please select'}) %><br>
+Priority:
+<%= f.select(:priority, [["Low",1],["Medium",2],["High",3],["Emergency",4],["Critical",5]], {:include_blank => 'Please select'}) %><br>
+Subject:
+<%= f.text_field :subject %><br>
+Description:<br>
+<%= f.text_area :description %><br>
+<%=f.submit%>
+
+<% end %>
+
+<%=render :partial => "_partialnew" %>

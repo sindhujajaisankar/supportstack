@@ -1,0 +1,34 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/staffticket/ticket1" %>
+ </div>
+
+ <div id="content">
+<div id="box1">
+    
+		 <table border=1>
+      <tr>
+      <th>#</th>
+      <th>Id</th>
+      <th>ticket</th>
+			 <th>Assigned date</th>
+			 <th>Closed date</th>
+      <th>status</th>
+      </tr>
+<%@a=1%>
+    <% @s.each do |f|%>
+<tr> 
+<td><%=@a%></td>
+<td><%=f.id%></td> 
+<td><%=link_to f.subject, "/staffticket/show/#{f.id}", :method=>'show'%><br>
+<td><%=f.created_at%><br>
+<td><%=f.updated_at%><br>	
+<td><%=f.status%>
+</tr>
+<%@a=@a+1%>
+<%end%>
+</table>
+
+</div>
+</div>
+ </div>

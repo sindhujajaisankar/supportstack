@@ -1,0 +1,40 @@
+<div id="main">
+ <div id="sidebar">
+ <%=render :partial => "/staffticket/stafftick" %>
+ </div>
+ 
+ 
+ <div id="content">
+<div id="box1">
+<div id=first>
+ Id:
+<%=@tick1.id%><br>
+Date:
+<%=@tick1.created_at%><br>
+Priority:
+<%=@tick1.priority%><br>
+Status:
+<%=@tick1.status%><br>
+				
+Ticket:
+<%=@tick1.subject%><br>
+            
+Message:
+<%=@tick1.description%><br>
+
+</div>
+<div id=second>
+<%=form_for :ticket,:url=>{:action=>"save",:id=>"#{@tick1.id}"} do |a|%>
+
+<%=fields_for @comment,:url=>{} do |c|%>
+Comment:<br>  
+<%=c.text_area   :comment %>
+<%end%>
+
+<%=a.submit "completed"%>
+<%end%>
+</div>
+  
+</div>
+</div>
+</div>

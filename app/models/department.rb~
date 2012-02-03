@@ -1,0 +1,10 @@
+class Department < ActiveRecord::Base
+validates :name, :uniqueness => true # :message => "must be unique" 
+validates :name, :Presence => true #:message => "must not be blank"
+validates :description, :Presence => true
+#validates :phone_number, :Numericality=> true
+#validate_length_of :name, :maximum => 5
+has_many :staff_admins
+ has_many :tickets
+
+end

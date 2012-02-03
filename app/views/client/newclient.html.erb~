@@ -1,0 +1,21 @@
+<h2>add client</h2>
+
+<%=form_for @cli,:url=>{:action=>'create'} do |c|%>
+Full name<%=c.text_field :fullname%></br>
+Company <%=c.text_field :company%></br>
+Address1 <%=c.text_field :Address1%></br>
+Address2 <%=c.text_field :Address2%></br>
+City <%=c.text_field :city%></br>
+state <%=c.text_field :state%></br>
+
+
+
+phone <%=c.text_field :phone%></br>
+mobile <%=c.text_field :mobile%></br>
+fax <%=c.text_field :fax%></br>
+email <%=c.email_field :email%></br>
+username <%=c.text_field :username%></br>
+password <%=c.text_field :password%></br>
+<%=c.submit"save"%>
+<%end%>
+

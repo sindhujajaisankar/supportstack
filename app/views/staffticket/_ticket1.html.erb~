@@ -1,0 +1,12 @@
+
+   <h3>							
+     Template
+   </h3>
+   <ul class="linkedList">
+     <li class="first">
+	<a href="/staffticket/listticket">Assigned tickets</a>
+   </li>
+   <li>
+	<a href="/staffticket/completedtick">Completed tickets</a>
+   </li>
+</ul>
